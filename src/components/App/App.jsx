@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
 
@@ -15,3 +16,24 @@ function App() {
 }
 
 export default App;
+
+// <Router>
+// <Route exact path "/">
+
+// </Route>
+// <Route exact path "/1">
+
+// </Route>
+// <Route exact path "/2">
+
+// </Route>
+// <Route exact path "/3">
+
+// </Route>
+// <Route exact path "/4">
+
+// </Route>
+// <Route exact path "/done">
+
+// </Route>
+// </Router>
