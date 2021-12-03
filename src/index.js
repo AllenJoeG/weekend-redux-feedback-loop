@@ -11,13 +11,13 @@ import { Provider } from 'react-redux';
 
 const feedbackReducer = (state = [], action) => {
   switch(action.type) {
-      case 'FIRST_BIT':
+      case 'HAVING_FEELINGS':
           return action.payload;
-        case 'SECOND_BIT':
+        case 'UNDER_STANDING':
           return [...state, action.payload];
-        case 'THIRD_BIT':
+        case 'SUPPORT_WARD':
           return [...state, action.payload];
-        case 'LAST_BIT':
+        case 'COMMENTS_DONE':
           return [...state, action.payload];
       default:
           return state;

@@ -17,23 +17,28 @@ function App() {
 
 export default App;
 
-// <Router>
-// <Route exact path "/">
+{/* <Router>
+<Route exact path "/">
 
-// </Route>
-// <Route exact path "/1">
+</Route>
 
-// </Route>
-// <Route exact path "/2">
+<Route exact path "/feeling">
 
-// </Route>
-// <Route exact path "/3">
+</Route>
 
-// </Route>
-// <Route exact path "/4">
+<Route exact path "/understanding">
 
-// </Route>
-// <Route exact path "/done">
+</Route>
 
-// </Route>
-// </Router>
+<Route exact path "/support">
+
+</Route>
+
+<Route exact path "/comments">
+
+</Route>
+
+<Route exact path "/done">
+
+</Route>
+</Router> */}
