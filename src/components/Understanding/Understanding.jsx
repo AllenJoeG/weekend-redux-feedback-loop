@@ -5,6 +5,7 @@ import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 //Hooks
 import { useDispatch } from 'react-redux';

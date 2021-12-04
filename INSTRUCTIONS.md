@@ -9,7 +9,7 @@ Create your database and tables using the provided `data.sql` file. Start the se
 ```
 npm install
 npm install redux react-redux redux-logger
-npm install @mui/material @emotion/react @emotion/styled @mui/styled-engine-sc styled-components
+npm install @mui/material @emotion/react @emotion/styled @mui/styled-engine-sc styled-components @mui/icons-material
 npm run server
 ```
 

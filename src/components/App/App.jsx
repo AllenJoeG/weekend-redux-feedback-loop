@@ -5,6 +5,9 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 //import Components
 import Feeling from '../Feeling/Feeling.jsx';
+import Understanding from '../Understanding/Understanding.jsx';
+import Support from '../Support/Support.jsx';
+import Comments from '../Comments/Comments.jsx';
 
 
 function App() {
