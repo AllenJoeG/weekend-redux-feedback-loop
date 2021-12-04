@@ -19,6 +19,9 @@ import Review from '../Review/Review.jsx';
 
 function App() {
 
+  const postFeedback = (object) => {
+    //AXIOS post goes here
+  };
 
 
   return (
@@ -54,7 +57,7 @@ function App() {
             </Route>
 
             <Route exact path="/review">
-              <Review />
+              <Review postFeedback={postFeedback} />
             </Route>
           </Router>
         </Box>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
@@ -23,7 +23,7 @@ const StyledRating = styled(Rating)({
 
 export default function Support(){
 //hold local state for the value of the Rating
-  const [support, setFeeling] = useState(2.5)
+  const [support, setSupport] = useState(2.5)
 //Alias HOOKS
   const history = useHistory();
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ export default function Support(){
   const handleDispatchAndNav = () => {
     dispatch({
       type: 'SUPPORT_WARD_PLZ',
-      payload: {support}
+      payload: support
     });
     history.push('/comments');
   };
@@ -57,7 +57,7 @@ export default function Support(){
         value={support}
         onChange={handleSupport}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-        precision={0.5}
+        precision={0.1}
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
@@ -41,7 +41,7 @@ const [understanding, setUnderstanding] = useState(2.5)
   const handleDispatchAndNav = () => {
     dispatch({
       type: 'UNDER_STANDING',
-      payload: {understanding}
+      payload: understanding
     })
     history.push('/support');
   }
@@ -58,7 +58,7 @@ const [understanding, setUnderstanding] = useState(2.5)
         value={understanding}
         onChange={handleUnderstanding}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-        precision={0.2}
+        precision={0.1}
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />

@@ -45,7 +45,7 @@ const handleFeeling = (e) => {
   const handleDispatchAndNav = () => {
     dispatch({
       type: 'HAVING_FEELINGS',
-      payload: {feeling}
+      payload: feeling
     })
 
     history.push('/understanding');
@@ -63,7 +63,7 @@ const handleFeeling = (e) => {
         value={feeling}
         onChange={handleFeeling}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-        precision={0.5}
+        precision={0.1}
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />

@@ -5,28 +5,30 @@ import { Button, Box } from "@mui/material";
 import { useSelector } from 'react-redux';
 
 
-export default function Review() {
+export default function Review({postFeedback}) {
   const feedback = useSelector((store) => store.feedbackReducer);
-  console.log(feedback);
-
+  //wrap the object in an array for mapping
+  const arrayed = [feedback];
 
   //Submit button should call POST function from App that submits full Reflection to Server/DB
     // .then clear the reviewReducer
     // and nav back to front page
-  
+  const handleSubmit = () => {
+    postFeedback(feedback);
+  }
 
   return(
     <Box>
-      {feedback.map((feedback) => {
+      {arrayed.map((arrayed) => {
         return <div>
-          <p>Feelings: {feedback.feeling}</p>
-          <p>Understanding: {feedback.understanding}</p>
-          <p>Support: {feedback.support}</p>
-          <p>Comments: {feedback.comments}</p>
+          <p>Feelings: {arrayed.feeling}</p>
+          <p>Understanding: {arrayed.understanding}</p>
+          <p>Support: {arrayed.support}</p>
+          <p>Comments: {arrayed.comments}</p>
           </div>
       })}
       
-      <Button>Submit Reflection!</Button>
+      <Button onClick={handleSubmit}>Submit Reflection!</Button>
     </Box>
   )
 }
