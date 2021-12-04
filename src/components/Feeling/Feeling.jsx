@@ -20,6 +20,8 @@ const StyledRating = styled(Rating)({
   },
 });
 
+//hold local state for the value of the Rating
+
 //Write button handler that
   //dispatches Rating value to Reducer w type HAVING_FEELINGS
   //calls useHistory to navigate to /understanding

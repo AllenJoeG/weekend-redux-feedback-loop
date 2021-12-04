@@ -15,6 +15,11 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
+<Feeling/>
+<Understanding />
+<Support/>
+<Comments/>
+
     </div>
   );
 }
@@ -23,7 +28,8 @@ export default App;
 
 {/* <Router>
 <Route exact path "/">
-
+  <p>It's time for REFLECTION!</p>
+  <Button>Begin</Button>
 </Route>
 
 <Route exact path "/feeling">
@@ -31,15 +37,15 @@ export default App;
 </Route>
 
 <Route exact path "/understanding">
-
+  <Understanding />
 </Route>
 
 <Route exact path "/support">
-
+  <Support />
 </Route>
 
 <Route exact path "/comments">
-
+  <Comments />
 </Route>
 
 <Route exact path "/done">
