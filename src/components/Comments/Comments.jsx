@@ -1,6 +1,6 @@
 import React from "react";
 import TextField from '@mui/material/TextField';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import InsertComment from '@mui/icons-material/InsertComment';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -24,14 +24,14 @@ const history = useHistory();
 
   return(
     <Box>
-      <p>Comments?</p>
+      <p>Quick thoughts and reflection on today?</p>
       <TextField
         id="input-with-icon-textfield"
         label="Comments!"
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <AccountCircle />
+              <InsertComment />
             </InputAdornment>
           ),
         }}
