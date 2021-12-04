@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 
 //HOOKS
-import { HashRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
 //import Components
@@ -19,12 +19,6 @@ import Review from '../Review/Review.jsx';
 
 function App() {
 
-  //alias useHistory
-  const history = useHistory();
-
-  const handleBegin = () => {
-    history.push('/feeling');
-  }
 
 
   return (
@@ -39,7 +33,8 @@ function App() {
           <Router>
             <Route exact path="/">
               <p>It's time for REFLECTION!</p>
-              <Button onClick={handleBegin}>Begin</Button>
+              {/* use a LINK for this initial nav */}
+              <Link to='/feeling'><Button>Begin</Button></Link>
             </Route>
 
             <Route exact path="/feeling">

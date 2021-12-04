@@ -9,10 +9,7 @@ export default function Review() {
   const feedback = useSelector((store) => store.feedbackReducer);
   console.log(feedback);
 
-  // let mappedFeedback = []
-  // feedback.map((bit) => {
-  //   return 
-  // })
+
   //Submit button should call POST function from App that submits full Reflection to Server/DB
     // .then clear the reviewReducer
     // and nav back to front page
