@@ -3,6 +3,7 @@ import { Button, Box } from "@mui/material";
 
 //HOOKS
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 export default function Review({postFeedback}) {
@@ -10,12 +11,16 @@ export default function Review({postFeedback}) {
   //wrap the object in an array for mapping
   const arrayed = [feedback];
 
+  //alias HOOK
+  const history = useHistory();
+
   //Submit button should call POST function from App that submits full Reflection to Server/DB
-    // .then clear the reviewReducer
-    // and nav back to front page
+    // .then clear the reviewReducer (gonna do this at App level)
+    // and nav back to front page or stretch to admin summary
   const handleSubmit = () => {
     postFeedback(feedback);
-  }
+    history.push('/');
+  };
 
   return(
     <Box>

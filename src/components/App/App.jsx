@@ -19,7 +19,9 @@ import Review from '../Review/Review.jsx';
 
 function App() {
 
-  const postFeedback = (object) => {
+  //This function is passed down to Review Component. Brings up full feedback.
+  const postFeedback = (feedback) => {
+    console.log(feedback);
     //AXIOS post goes here
   };
 
