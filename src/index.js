@@ -15,7 +15,7 @@ const feedbackReducer = (state = [], action) => {
           return action.payload;
         case 'UNDER_STANDING':
           return [...state, action.payload];
-        case 'SUPPORT_WARD':
+        case 'SUPPORT_WARD_PLZ':
           return [...state, action.payload];
         case 'COMMENTS_DONE':
           return [...state, action.payload];
