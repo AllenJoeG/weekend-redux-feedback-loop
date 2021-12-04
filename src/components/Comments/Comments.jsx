@@ -26,7 +26,7 @@ export default function Comments(){
         }}
         variant="standard"
       />
-      <Button>Submit Reflection!</Button>
+      <Button>Review</Button>
     </Box>
   );
 };

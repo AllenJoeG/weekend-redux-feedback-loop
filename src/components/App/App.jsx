@@ -51,7 +51,7 @@ export default App;
   <Comments />
 </Route>
 
-<Route exact path "/done">
+<Route exact path "/review">
 
 </Route>
 </Router> */}
