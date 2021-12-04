@@ -7,9 +7,20 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 //Hooks
 import { useDispatch } from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export default function Comments(){
+
+//hold local state for the value of the Rating
+const history = useHistory();
+
+
+//Write button handler that
+  //dispatches Rating value to Reducer w type 'COMMENTS_DONE'
+  //calls useHistory to navigate to /understanding
+  const handleDispatchAndNav = () => {
+    history.push('/review');
+  };
 
   return(
     <Box>
@@ -26,7 +37,7 @@ export default function Comments(){
         }}
         variant="standard"
       />
-      <Button>Review</Button>
+      <Button onClick={handleDispatchAndNav}>Review</Button>
     </Box>
   );
 };

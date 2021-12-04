@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 //Hooks
 import { useDispatch } from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 //uses MUI Material STyles to add hover/filled color to rating box
 const StyledRating = styled(Rating)({
@@ -21,16 +21,17 @@ const StyledRating = styled(Rating)({
   },
 });
 
+export default function Feeling(){
 //hold local state for the value of the Rating
+  const history = useHistory();
+
 
 //Write button handler that
-  //dispatches Rating value to Reducer w type HAVING_FEELINGS
+  //dispatches Rating value to Reducer w type 'SUPPORT_WARD_PLZ'
   //calls useHistory to navigate to /understanding
-
-
-export default function Feeling(){
-
-  
+  const handleDispatchAndNav = () => {
+    history.push('/comments');
+  };
   
   return(
     <Box
@@ -38,7 +39,7 @@ export default function Feeling(){
         '& > legend': { mt: 2 },
       }}
     >
-      <Typography component="legend">Custom icon and color</Typography>
+      <Typography component="legend">We're all Interdependent. How are you feeling supported today?</Typography>
       <StyledRating
         name="customized-color"
         defaultValue={2}
@@ -48,7 +49,7 @@ export default function Feeling(){
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />
 
-      <Button>Next</Button>
+      <Button onClick={handleDispatchAndNav}>Next</Button>
     </Box>
 
 

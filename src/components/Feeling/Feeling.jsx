@@ -9,7 +9,8 @@ import Button from '@mui/material/Button';
 
 //Hooks
 import { useDispatch } from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { Route, useHistory} from 'react-router-dom';
+
 
 //uses MUI Material STyles to add hover/filled color to rating box
 const StyledRating = styled(Rating)({
@@ -21,16 +22,22 @@ const StyledRating = styled(Rating)({
   },
 });
 
-//hold local state for the value of the Rating
 
-//Write button handler that
-  //dispatches Rating value to Reducer w type HAVING_FEELINGS
-  //calls useHistory to navigate to /understanding
 
 
 export default function Feeling(){
 
-  
+  //hold local state for the value of the Rating
+
+//Write button handler that
+  //dispatches Rating value to Reducer w type 'HAVING_FEELINGS'
+  //calls useHistory to navigate to /understanding
+
+  const history = useHistory();
+
+  const handleDispatchAndNav = () => {
+    history.push('/understanding');
+  }
   
   return(
     <Box
@@ -38,17 +45,17 @@ export default function Feeling(){
         '& > legend': { mt: 2 },
       }}
     >
-      <Typography component="legend">Custom icon and color</Typography>
+      <Typography component="legend">Be Present with what your body is telling you! How are you feeling today?</Typography>
       <StyledRating
         name="customized-color"
-        defaultValue={2}
+        defaultValue={2.5}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
         precision={0.5}
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />
 
-      <Button>Next</Button>
+      <Button onClick={handleDispatchAndNav}>Next</Button>
     </Box>
 
 
