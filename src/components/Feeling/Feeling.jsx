@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
@@ -28,14 +28,26 @@ const StyledRating = styled(Rating)({
 export default function Feeling(){
 
   //hold local state for the value of the Rating
+  const [feeling, setFeeling] = useState(2.5)
 
-//Write button handler that
-  //dispatches Rating value to Reducer w type 'HAVING_FEELINGS'
-  //calls useHistory to navigate to /understanding
-
+  //alias HOOKS
+  const dispatch = useDispatch();
   const history = useHistory();
 
+//event handler for value change
+const handleFeeling = (e) => {
+  setFeeling(Number(e.target.value))
+};
+
+//Button Handler for submit
+  //dispatches Rating value to Reducer w type 'HAVING_FEELINGS'
+  //calls useHistory to navigate to /understanding
   const handleDispatchAndNav = () => {
+    dispatch({
+      type: 'HAVING_FEELINGS',
+      payload: {feeling}
+    })
+
     history.push('/understanding');
   }
   
@@ -48,7 +60,8 @@ export default function Feeling(){
       <Typography component="legend">Be Present with what your body is telling you! How are you feeling today?</Typography>
       <StyledRating
         name="customized-color"
-        defaultValue={2.5}
+        value={feeling}
+        onChange={handleFeeling}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
         precision={0.5}
         icon={<FavoriteIcon fontSize="inherit" />}

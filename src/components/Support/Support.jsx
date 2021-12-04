@@ -21,15 +21,27 @@ const StyledRating = styled(Rating)({
   },
 });
 
-export default function Feeling(){
+export default function Support(){
 //hold local state for the value of the Rating
+  const [support, setFeeling] = useState(2.5)
+//Alias HOOKS
   const history = useHistory();
-
-
-//Write button handler that
+  const dispatch = useDispatch();
+  
+//Event Handler for RATING VALUE change
+  const handleSupport = (e) => {
+    setSupport(Number(e.target.value))
+  };
+  
+  
+//Button handler that
   //dispatches Rating value to Reducer w type 'SUPPORT_WARD_PLZ'
   //calls useHistory to navigate to /understanding
   const handleDispatchAndNav = () => {
+    dispatch({
+      type: 'SUPPORT_WARD_PLZ',
+      payload: {support}
+    });
     history.push('/comments');
   };
   
@@ -42,7 +54,8 @@ export default function Feeling(){
       <Typography component="legend">We're all Interdependent. How are you feeling supported today?</Typography>
       <StyledRating
         name="customized-color"
-        defaultValue={2}
+        value={support}
+        onChange={handleSupport}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
         precision={0.5}
         icon={<FavoriteIcon fontSize="inherit" />}

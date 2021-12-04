@@ -24,14 +24,25 @@ const StyledRating = styled(Rating)({
 
 export default function Understanding(){
 //hold local state for the value of the Rating
+const [understanding, setUnderstanding] = useState(2.5)
 
   const history = useHistory();
-
-
-//Write button handler that
+  const dispatch = useDispatch();
+  
+  //Event Handler for changing Rating Value
+  const handleUnderstanding = (e) => {
+    setUnderstanding(Number(e.target.value))
+  };
+  
+  
+//Button Handler for submit:
   //dispatches Rating value to Reducer w type 'UNDER_STANDING'
-  //calls useHistory to navigate to /understanding
+  //calls useHistory to navigate to /support
   const handleDispatchAndNav = () => {
+    dispatch({
+      type: 'UNDER_STANDING',
+      payload: {understanding}
+    })
     history.push('/support');
   }
   
@@ -44,9 +55,10 @@ export default function Understanding(){
       <Typography component="legend">Our minds are constantly growing. How would you assess your understanding of today's content?</Typography>
       <StyledRating
         name="customized-color"
-        defaultValue={2}
+        value={understanding}
+        onChange={handleUnderstanding}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
-        precision={0.5}
+        precision={0.2}
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />
