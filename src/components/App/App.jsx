@@ -29,6 +29,7 @@ function App() {
     fetchDbForReducer();
   }, [])
 
+  //AXIOS POST
   //This function is passed down to Review Component. Brings up full feedback.
   const postFeedback = (feedback) => {
     console.log('postFeedback function hit. preparing to POST: ', feedback);
@@ -50,6 +51,7 @@ function App() {
     });
   };
 
+    //AXIOS GET
   //Function holds GET request dispatch DB rows to dbReducer
   const fetchDbForReducer = () => {
     console.log('in fetchDb function')
@@ -67,6 +69,20 @@ function App() {
     });
   };
 
+  //AXIOS DELETE
+  //Function handles delete requests from admin page
+  function deleteFeedback(id){
+    console.log('in deleteFeedback', id)
+    axios({
+      method: 'DELETE',
+      url: `/feedback/${id}`
+    }).then((response) => {
+      console.log(response);
+      fetchDbForReducer();
+    }).catch((error) => {
+      console.log('Unable to delete Task, why? :', error);
+    });
+  };
 
   return (
     <div className='App'>
@@ -109,7 +125,7 @@ function App() {
             </Route>
 
             <Route exact path="/admin">
-              <Admin fetchDbForReducer={fetchDbForReducer} />
+              <Admin fetchDbForReducer={fetchDbForReducer} deleteFeedback={deleteFeedback} />
             </Route>
 
           </Router>

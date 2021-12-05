@@ -26,7 +26,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export default function Admin({fetchDbForReducer}) {
+export default function Admin({fetchDbForReducer, deleteFeedback}) {
 
   useEffect(() => {
     console.log('in UseEffect')
@@ -35,6 +35,12 @@ export default function Admin({fetchDbForReducer}) {
 
   const feedbackHistory = useSelector((store) => store.dbReducer);
   console.log(feedbackHistory);
+
+
+// const handleDelete = (id) => {
+//   console.log(id)
+//   deleteFeedback(id);
+// };
 
 
   return( 
@@ -54,13 +60,13 @@ export default function Admin({fetchDbForReducer}) {
         <TableBody>
           {feedbackHistory.map((row) => {
             return <StyledTableRow key={row.id}>
-              <StyledTableCell align="left">{(row.date).slice(0, 10)}</StyledTableCell>
-              <StyledTableCell align="right">{row.feeling}</StyledTableCell>
-              <StyledTableCell align="right">{row.understanding}</StyledTableCell>
-              <StyledTableCell align="right">{row.support}</StyledTableCell>
-              <StyledTableCell align="right">{row.comments}</StyledTableCell>
+              <StyledTableCell align="left">🗓️ {(row.date).slice(0, 10)}</StyledTableCell>
+              <StyledTableCell align="right">❣️ {row.feeling}</StyledTableCell>
+              <StyledTableCell align="right">🧠 {row.understanding}</StyledTableCell>
+              <StyledTableCell align="right">🫂 {row.support}</StyledTableCell>
+              <StyledTableCell align="right">{row.comments} 💬</StyledTableCell>
               <StyledTableCell align="right"><Button variant="contained">{row.flagged ? 'Review!' : 'Flag!'}</Button></StyledTableCell>
-              <StyledTableCell align="right"><Button> ❌ </Button></StyledTableCell>
+              <StyledTableCell align="right"><Button onClick = {(e) => deleteFeedback(row.id)} variant="outlined"> ❌ </Button></StyledTableCell>
             </StyledTableRow>
           })}
         </TableBody>

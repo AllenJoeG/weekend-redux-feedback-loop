@@ -7,21 +7,19 @@ router.post('/', (req, res) => {
   console.log('Reached Server POST. Req.body:', req.body);
   //alias req.body
   const feedback = req.body
-
   const queryValues = [
     feedback.feeling, 
     feedback.understanding, 
     feedback.support,
     feedback.comments
-  ]
+    ];
   console.log(queryValues)
   const querySQL = `
     INSERT INTO "feedback" 
       ("feeling", "understanding", "support", "comments")
     VALUES
       ($1, $2, $3, $4)
-  `
-
+    `
   pool.query(querySQL, queryValues)
     .then((result) => {
       console.log('table "feedback" successfully modified');
@@ -32,8 +30,8 @@ router.post('/', (req, res) => {
     });
 });
 
-//GET Route for Stretch Goal Admin page
 
+//GET Route for Stretch Goal Admin page
 router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "feedback" ORDER BY "id";`;
 
@@ -46,7 +44,26 @@ router.get('/', (req, res) => {
     console.log('Error fetching tasks:', error);
     res.sendStatus(500);
   });
+});
 
-})
+//DELETE Route for Stretch Goal Admin page
+router.delete('/:id', (req, res) => {
+  console.log('in /feedback/:id DELETE route', req.params);
+  const idDelete = req.params.id;
+  const sqlValues = [idDelete];
+  const sqlText = `
+    DELETE FROM "feedback"
+      WHERE "id"=$1;
+  `;
+  //Query the DB with above instructions
+  pool.query(sqlText, sqlValues)
+  .then((dbResult) => {
+    console.log('Delete confirmed:', req.params.id)
+    res.sendStatus(200);
+  }).catch((dbErr) => {
+    console.error('issue hitting DB', dbErr);
+    res.sendStatus(500);
+  });
+});
 
 module.exports = router;
