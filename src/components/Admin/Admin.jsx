@@ -32,7 +32,7 @@ export default function Admin({fetchDbForReducer}) {
         <tbody>
           {feedbackHistory.map((row) => {
             return <tr key={row.id}>
-              <td>{row.date}</td>
+              <td>{(row.date).slice(0, 10)}</td>
               <td>{row.feeling}</td>
               <td>{row.understanding}</td>
               <td>{row.support}</td>

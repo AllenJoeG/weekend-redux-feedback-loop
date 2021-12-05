@@ -56,6 +56,7 @@ export default function Support(){
         name="customized-color"
         value={support}
         onChange={handleSupport}
+        size="large"
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
         precision={0.1}
         icon={<FavoriteIcon fontSize="inherit" />}

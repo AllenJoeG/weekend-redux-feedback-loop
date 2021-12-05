@@ -57,6 +57,7 @@ const [understanding, setUnderstanding] = useState(2.5)
         name="customized-color"
         value={understanding}
         onChange={handleUnderstanding}
+        size="large"
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
         precision={0.1}
         icon={<FavoriteIcon fontSize="inherit" />}

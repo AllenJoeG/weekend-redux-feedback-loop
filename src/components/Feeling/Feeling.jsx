@@ -60,6 +60,7 @@ const handleFeeling = (e) => {
       <Typography component="legend">Be Present with what your body is telling you! How are you feeling today?</Typography>
       <StyledRating
         name="customized-color"
+        size="large"
         value={feeling}
         onChange={handleFeeling}
         getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
