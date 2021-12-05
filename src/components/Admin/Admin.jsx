@@ -4,15 +4,6 @@ import { useHistory } from 'react-router';
 
 //MUI stuff
 import { styled } from '@mui/material/styles';
-// import Table from '@mui/material/Table';
-// import TableBody from '@mui/material/TableBody';
-// import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-// import TableContainer from '@mui/material/TableContainer';
-// import TableHead from '@mui/material/TableHead';
-// import TableRow from '@mui/material/TableRow';
-// import Paper from '@mui/material/Paper';
-// import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
 import { Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Paper, Box, Button } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -47,7 +38,7 @@ export default function Admin({fetchDbForReducer}) {
 
 
   return( 
-    <TableContainer>
+    <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
@@ -68,8 +59,8 @@ export default function Admin({fetchDbForReducer}) {
               <StyledTableCell align="right">{row.understanding}</StyledTableCell>
               <StyledTableCell align="right">{row.support}</StyledTableCell>
               <StyledTableCell align="right">{row.comments}</StyledTableCell>
-              <StyledTableCell><Button variant="contained">{row.flagged ? 'Review!' : 'Flag!'}</Button></StyledTableCell>
-              <StyledTableCell><Button> ❌ </Button></StyledTableCell>
+              <StyledTableCell align="right"><Button variant="contained">{row.flagged ? 'Review!' : 'Flag!'}</Button></StyledTableCell>
+              <StyledTableCell align="right"><Button> ❌ </Button></StyledTableCell>
             </StyledTableRow>
           })}
         </TableBody>
