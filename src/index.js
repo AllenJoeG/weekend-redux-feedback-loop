@@ -29,7 +29,12 @@ const feedbackReducer = (state = {feeling: 0, understanding: 0, support: 0, comm
 
 const dbReducer = (state = [], action) => {
   //feed this Reducer with DB by way of GET
-  return state;
+  switch(action.type) {
+    case 'HOLD_FEEDBACK_ROWS':
+      return [action.payload]
+    default:
+      return state;
+  };
 };
 
 const storeInstance = createStore(

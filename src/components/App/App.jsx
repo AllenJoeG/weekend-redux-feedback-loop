@@ -52,7 +52,10 @@ function App() {
       url: '/feedback'
     }).then((response) => {
       console.log('We received DB Rows', response);
-      //dispatch to Reducer
+      dispatch({
+        type: 'HOLD_FEEDBACK_ROWS',
+        payload: response
+      })
     }).catch((error) => {
       console.log('GET request failed:', error);
     });

@@ -34,4 +34,19 @@ router.post('/', (req, res) => {
 
 //GET Route for Stretch Goal Admin page
 
+router.get('/', (req, res) => {
+  const queryText = `SELECT * FROM "feedback" ORDER BY "id";`;
+
+  pool.query(queryText).then((result) => {
+    // console.log(result.rows);
+    // Sends back the results in an object
+    res.send(result.rows);
+  })
+  .catch((dbErr) => {
+    console.log('Error fetching tasks:', error);
+    res.sendStatus(500);
+  });
+
+})
+
 module.exports = router;
