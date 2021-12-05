@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
-export default function Admin() {
+export default function Admin({fetchDbForReducer}) {
+
+  useEffect(() => {
+    console.log('in UseEffect')
+    fetchDbForReducer();
+  }, [])
 
   const feedbackHistory = useSelector((store) => store.dbReducer);
-  //In which we will map through a reducer holding all the DB rows, feedback history.
+  console.log(feedbackHistory);
 
-  //and render them in a table, with a delete button, which we'll wire up eventually.
 
   return( 
     <Box>

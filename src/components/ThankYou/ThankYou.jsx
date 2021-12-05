@@ -15,7 +15,7 @@ export default function ThankYou() {
   }
 
   const handleAdmin = () => {
-    // history.push('/admin')
+    history.push('/admin')
   }
 
   return(

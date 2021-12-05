@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Box from '@mui/material/Box';
@@ -24,11 +24,15 @@ function App() {
   //alias HOOKS
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    console.log('in UseEffect')
+    fetchDbForReducer();
+  }, [])
+
   //This function is passed down to Review Component. Brings up full feedback.
   const postFeedback = (feedback) => {
     console.log('postFeedback function hit. preparing to POST: ', feedback);
     //AXIOS post goes here
-
     axios({
       method: 'POST',
       url: '/feedback',
@@ -48,14 +52,15 @@ function App() {
 
   //Function holds GET request dispatch DB rows to dbReducer
   const fetchDbForReducer = () => {
+    console.log('in fetchDb function')
     axios({
       method: 'GET',
       url: '/feedback'
     }).then((response) => {
-      console.log('We received DB Rows', response);
+      console.log('We received DB Rows', response.data);
       dispatch({
         type: 'HOLD_FEEDBACK_ROWS',
-        payload: response
+        payload: response.data
       })
     }).catch((error) => {
       console.log('GET request failed:', error);
@@ -104,7 +109,7 @@ function App() {
             </Route>
 
             <Route exact path="/admin">
-              <Admin />
+              <Admin fetchDbForReducer={fetchDbForReducer} />
             </Route>
 
           </Router>
