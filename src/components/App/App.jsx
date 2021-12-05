@@ -15,6 +15,7 @@ import Understanding from '../Understanding/Understanding.jsx';
 import Support from '../Support/Support.jsx';
 import Comments from '../Comments/Comments.jsx';
 import Review from '../Review/Review.jsx';
+import ThankYou from '../ThankYou/ThankYou.jsx';
 
 
 function App() {
@@ -77,6 +78,10 @@ function App() {
 
             <Route exact path="/review">
               <Review postFeedback={postFeedback} />
+            </Route>
+
+            <Route exact path="/thankyou">
+              <ThankYou />
             </Route>
           </Router>
         </Box>

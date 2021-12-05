@@ -19,7 +19,7 @@ export default function Review({postFeedback}) {
     // and nav back to front page or stretch to admin summary
   const handleSubmit = () => {
     postFeedback(feedback);
-    history.push('/');
+    history.push('/thankyou');
   };
 
   return(
