@@ -21,8 +21,25 @@ function App() {
 
   //This function is passed down to Review Component. Brings up full feedback.
   const postFeedback = (feedback) => {
-    console.log(feedback);
+    console.log('postFeedback function hit. preparing to POST: ', feedback);
     //AXIOS post goes here
+
+    axios({
+      method: 'POST',
+      url: '/feedback',
+      data: {
+        feeling: feedback.feeling,
+        understanding: feedback.understanding,
+        support: feedback.support,
+        comments: feedback.comments
+      }
+    }).then((res) => {
+      console.log('POST success', res);
+      
+    }).catch((error) => {
+      console.log('POST failed', error);
+    });
+
   };
 
 
@@ -69,8 +86,3 @@ function App() {
 }
 
 export default App;
-
-{/* <Feeling/>
-<Understanding />
-<Support/>
-<Comments/> */}
