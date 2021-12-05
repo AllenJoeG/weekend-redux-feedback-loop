@@ -17,6 +17,7 @@ import Support from '../Support/Support.jsx';
 import Comments from '../Comments/Comments.jsx';
 import Review from '../Review/Review.jsx';
 import ThankYou from '../ThankYou/ThankYou.jsx';
+import Admin from '../Admin/Admin.jsx';
 
 
 function App() {
@@ -101,6 +102,11 @@ function App() {
             <Route exact path="/thankyou">
               <ThankYou />
             </Route>
+
+            <Route exact path="/admin">
+              <Admin />
+            </Route>
+
           </Router>
         </Box>
       </div>
