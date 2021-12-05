@@ -24,8 +24,6 @@ const StyledRating = styled(Rating)({
 });
 
 
-
-
 export default function Feeling(){
 
   //hold local state for the value of the Rating

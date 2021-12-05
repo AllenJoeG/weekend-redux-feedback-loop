@@ -102,7 +102,7 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1>
+        <h1 className='App-title'>Mindful Reflection</h1>
         <h4>A micro-journal of how we're doing.</h4>
         
       </header>
@@ -146,6 +146,19 @@ function App() {
           </Router>
         </Box>
       </div>
+      <footer>
+      <Box 
+        bgcolor="text.secondary"
+        color="white"
+        py={{xs: 2}}
+        sx={{width: '100%'}}
+        position="fixed" 
+        textAlign="center"
+        bottom="0" 
+      >
+        Mindful Reflection &reg; Joe Allen - 2021
+      </Box>
+      </footer>
     </div>
   );
 }
