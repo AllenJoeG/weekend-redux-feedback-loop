@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 
 //HOOKS
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 //import Components
@@ -19,6 +20,8 @@ import ThankYou from '../ThankYou/ThankYou.jsx';
 
 
 function App() {
+  //alias HOOKS
+  const dispatch = useDispatch();
 
   //This function is passed down to Review Component. Brings up full feedback.
   const postFeedback = (feedback) => {
@@ -40,7 +43,19 @@ function App() {
     }).catch((error) => {
       console.log('POST failed', error);
     });
+  };
 
+  //Function holds GET request dispatch DB rows to dbReducer
+  const fetchDbForReducer = () => {
+    axios({
+      method: 'GET',
+      url: '/feedback'
+    }).then((response) => {
+      console.log('We received DB Rows', response);
+      //dispatch to Reducer
+    }).catch((error) => {
+      console.log('GET request failed:', error);
+    });
   };
 
 
