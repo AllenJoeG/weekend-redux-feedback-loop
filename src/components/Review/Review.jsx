@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Box } from "@mui/material";
+import FactCheckIcon from '@mui/icons-material/FactCheck';
 
 //HOOKS
 import { useSelector } from 'react-redux';
@@ -33,7 +34,7 @@ export default function Review({postFeedback}) {
           </div>
       })}
       
-      <Button onClick={handleSubmit}>Submit Reflection!</Button>
+      <Button variant="outlined" endIcon={<FactCheckIcon />} onClick={handleSubmit}>Submit Reflection!</Button>
     </Box>
   )
 }

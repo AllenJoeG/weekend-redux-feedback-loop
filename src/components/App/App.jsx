@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import PollIcon from '@mui/icons-material/Poll';
 
 
 //HOOKS
@@ -111,7 +112,7 @@ function App() {
             <Route exact path="/">
               <p>It's time for REFLECTION!</p>
               {/* use a LINK for this initial nav */}
-              <Link to='/feeling'><Button>Begin</Button></Link>
+              <Link to='/feeling'><Button endIcon={<PollIcon />} variant="outlined">Begin</Button></Link>
             </Route>
 
             <Route exact path="/feeling">

@@ -4,6 +4,7 @@ import InsertComment from '@mui/icons-material/InsertComment';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import InputAdornment from '@mui/material/InputAdornment';
+import PreviewIcon from '@mui/icons-material/Preview';
 
 //Hooks
 import { useDispatch } from 'react-redux';
@@ -50,7 +51,8 @@ export default function Comments(){
         }}
         variant="standard"
       />
-      <Button onClick={handleDispatchAndNav}>Review</Button>
+      <Box paddingBottom="10px"></Box>
+      <Button variant="outlined" endIcon={<PreviewIcon />} onClick={handleDispatchAndNav}>Review</Button>
     </Box>
   );
 };

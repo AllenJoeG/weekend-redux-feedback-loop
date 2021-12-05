@@ -6,6 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 //Hooks
 import { useDispatch } from 'react-redux';
@@ -63,8 +64,8 @@ const [understanding, setUnderstanding] = useState(2.5)
         icon={<FavoriteIcon fontSize="inherit" />}
         emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
       />
-
-      <Button onClick={handleDispatchAndNav}>Next</Button>
+      <Box paddingBottom="10px"></Box>
+      <Button variant="outlined" endIcon={<ArrowCircleRightIcon />} onClick={handleDispatchAndNav}>Next</Button>
     </Box>
 
 
