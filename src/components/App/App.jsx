@@ -103,15 +103,15 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
-        <h4>Don't forget it!</h4>
+        <h4>A micro-journal of how we're doing.</h4>
+        
       </header>
     
       <div>
         <Box>
           <Router>
             <Route exact path="/">
-              <p>It's time for REFLECTION!</p>
-              {/* use a LINK for this initial nav */}
+              <p>Let's take a moment to consciously and mindfully reflect:</p>
               <Link to='/feeling'><Button endIcon={<PollIcon />} variant="outlined">Begin</Button></Link>
             </Route>
 
