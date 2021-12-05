@@ -72,17 +72,31 @@ function App() {
   //AXIOS DELETE
   //Function handles delete requests from admin page
   function deleteFeedback(id){
-    console.log('in deleteFeedback', id)
+    console.log('in deleteFeedback', id);
     axios({
       method: 'DELETE',
       url: `/feedback/${id}`
-    }).then((response) => {
-      console.log(response);
+    }).then((res) => {
+      // console.log(res);
       fetchDbForReducer();
-    }).catch((error) => {
-      console.log('Unable to delete Task, why? :', error);
+    }).catch((err) => {
+      console.log('Unable to delete Feedback:', err);
     });
   };
+
+  //AXIOS PUT
+  //Function updates the 'flagged' boolean status on selected db row
+  function updateFeedback(id){
+    console.log('in updateFeedback', id);
+    axios({
+      method: 'PUT',
+      url: `/feedback/${id}`
+    }).then((res) => {
+      fetchDbForReducer();
+    }).catch((err) => {
+      console.error('Unable to update Feedback:', err);
+    });
+  }
 
   return (
     <div className='App'>
@@ -125,7 +139,7 @@ function App() {
             </Route>
 
             <Route exact path="/admin">
-              <Admin fetchDbForReducer={fetchDbForReducer} deleteFeedback={deleteFeedback} />
+              <Admin fetchDbForReducer={fetchDbForReducer} updateFeedback={updateFeedback} deleteFeedback={deleteFeedback} />
             </Route>
 
           </Router>

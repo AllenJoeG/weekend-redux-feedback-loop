@@ -66,4 +66,23 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+//PUT Route for Stretch Goal Admin page, flags a row for review
+router.put('/:id', (req, res) => {
+  const idUpdate = req.params.id;
+  const sqlValues = [idUpdate]
+  const sqlText = `
+    UPDATE "feedback"
+      SET "flagged" = true
+      WHERE "id"=$1;
+  `;
+  pool.query(sqlText, sqlValues)
+    .then((dbResult) => {
+      res.sendStatus(200);
+    })
+    .catch((dbErr) => {
+      console.error(dbErr);
+      res.sendStatus(500);
+    })
+});
+
 module.exports = router;

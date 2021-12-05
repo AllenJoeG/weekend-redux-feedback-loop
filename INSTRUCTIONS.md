@@ -76,13 +76,13 @@ Improve the styling of the app using Material-UI. This might include cards, snac
 
 - The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database. 
   - Button and Output 👍
-  - PUT Route to edit row
+  - PUT Route to edit row 👍
 
 ![display feedback](wireframes/admin.png)
 
 - Add the ability to flag an existing feedback entry for further review on the /admin view.
   - Button 👍
-  - DELETE Route to remove
+  - DELETE Route to remove 👍
 
 ### DEPLOY
 Deploy your project to Heroku. You'll need to read the special instructions for building and deploying with React. 
