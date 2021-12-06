@@ -7,7 +7,7 @@ Mindful Reflection is a Full-Stack React app through which the user is prompted 
 
 On navigating past each step, the user's values are stored in Redux state as a Reducer object that is updated at each view. Upon reaching the 'Review' view, the final values of that state are rendered on the DOM. When the user submits, the information stored in the reducer is packaged as an object and sent via Axios POST request to the server. The Express server then builds a SQL query and updates the database with the user's reflection data, and stamps it with the date it was submitted.
 
-The final view is an 'admin' page, located at /admin, where all previous reflections that are stored in the database are fetched with an Axios GET request and rendered to a table on the DOM.
+The final view is an 'admin' page, located at /admin, where all previous reflections that are stored in the database are fetched with an Axios GET request and SQL and rendered to a table on the DOM. The user can Flag a reflection to mark it for further review (Axios PUT), or can delete (Axios DELETE, SQL) the row from the database by clicking the big red X.
 
 All styling in Material UI.
 
@@ -23,6 +23,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 ### Usage
   Click through the buttons as ya go! The user experience is gently linear. After submitting your first feedback, the user can take a link back to start a new survey, or see their feedback history.
+  
+  The admin page permits the user to 
 
 ### Built With
   - Front end: React, Redux, Javascript, HTML/JSX, Material UI
