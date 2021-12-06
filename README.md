@@ -3,7 +3,7 @@
 ## Description
 Duration: 2 Day Sprint, 12/4-12/5
 
-Mindful Reflection is a simple app through which the user is prompted to take a few moments and reflect on their day. As they traverse the app, the user rates how they are feeling in their body, how they are understanding their current material, and how well they are feeling supported, and then can leave any additional comment/notes for posterity. 
+Mindful Reflection is a Full-Stack React app through which the user is prompted to take a few moments and reflect on their day. As they traverse the app, the user rates how they are feeling in their body, how they are understanding their current material, and how well they are feeling supported, and then can leave any additional comment/notes for posterity. 
 
 On navigating past each step, the user's values are stored in Redux state as a Reducer object that is updated at each view. Upon reaching the 'Review' view, the final values of that state are rendered on the DOM. When the user submits, the information stored in the reducer is packaged as an object and sent via Axios POST request to the server. The Express server then builds a SQL query and updates the database with the user's reflection data, and stamps it with the date it was submitted.
 
