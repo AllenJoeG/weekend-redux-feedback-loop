@@ -147,20 +147,20 @@ function App() {
         </Box>
       </div>
       <footer>
-      <Box 
-        bgcolor="text.secondary"
-        color="white"
-        py={{xs: 2}}
-        sx={{width: '100%'}}
-        position="fixed" 
-        textAlign="center"
-        bottom="0" 
-      >
-        Mindful Reflection &reg; Joe Allen - 2021
-      </Box>
+        <Box 
+          bgcolor="text.secondary"
+          color="white"
+          py={{xs: 2}}
+          sx={{width: '100%'}}
+          position="fixed" 
+          textAlign="center"
+          bottom="0" 
+        >
+          Mindful Reflection &reg; Joe Allen, 2021
+        </Box>
       </footer>
     </div>
   );
-}
+};
 
 export default App;
