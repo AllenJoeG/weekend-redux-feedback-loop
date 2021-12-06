@@ -35,7 +35,8 @@ export default function Feeling(){
 
 //event handler for value change
 const handleFeeling = (e) => {
-  setFeeling(Number(e.target.value))
+  console.log(e.target.value);
+  setFeeling(Number(e.target.value));
 };
 
 //Button Handler for submit
