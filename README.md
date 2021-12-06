@@ -14,7 +14,8 @@ All styling in Material UI.
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
 ## Screenshot
-  Coming Soon! Beautiful styling to behold.
+  ![](./Screenshots/AdminScreen.png)
+  ![](./Screenshots/UnderstandingScreen.png)
 
 ### Installation
   Use this template to copy over to a fresh repository, and clone down to your local IDE of choice. Double check the dependencies in package.json, and then run 'npm install'. You will also want to set up a database based on the information in data.sql.
