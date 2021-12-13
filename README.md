@@ -11,8 +11,6 @@ The final view is an 'admin' page, located at /admin, where all previous reflect
 
 All styling in Material UI.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
-
 ## Screenshot
   ![](./Screenshots/AdminScreen.png)
   ![](./Screenshots/UnderstandingScreen.png)
@@ -25,7 +23,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 ### Usage
   Click through the buttons as ya go! The user experience is gently linear. After submitting your first feedback, the user can take a link back to start a new survey, or see their feedback history.
   
-  The admin page permits the user to 
+  The admin page reviews all previously submitted feedback, and allows for delete or flagging-for-review.
 
 ### Built With
   - Front end: React, Redux, Javascript, HTML/JSX, Material UI
